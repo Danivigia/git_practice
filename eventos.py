@@ -5,8 +5,8 @@ headers = {
   'Content-Type': 'application/json'
 }
 city = "Lisbon"
-
-request = urllib.request.Request('https://www.eventbriteapi.com/v3/events/search/?location.address=', city, headers=headers)
+data = city.encode("utf-8")
+request = urllib.request.Request('https://www.eventbriteapi.com/v3/events/search/?location.address=', data, headers=headers)
 
 response_body = urllib.request.urlopen(request).read()
 print(response_body)
